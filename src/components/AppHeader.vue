@@ -2,14 +2,17 @@
 export default {
   data() {
     return { 
-      message: 'Template Vite + Vue'
+      message: 'Yu\-Gi\-Oh API',
+      logoImg: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg'
     }
   }
 }
 </script>
 
 <template>
-  <header>
+  <header class="d-flex">
+    <img :src="logoImg"
+    alt="Yu Gi Oh">
     <h1>
       {{ message }}
     </h1>
@@ -20,12 +23,15 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 header {
-  background-color: $mainBgColor;
-  text-align: center;
-  padding: 20px 0;
+ 
+
+  padding: 20px;
+  img {
+    width: 80px;
+  }
 }
 
 h1 {
-  color: $mainColor;
+  font-size: 3rem;
 }
 </style>
