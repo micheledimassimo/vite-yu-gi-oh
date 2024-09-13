@@ -4,11 +4,15 @@
 export default {
   data() {
     return {
-      props: {
-      card: Object
-  }
+      
     }
+    
   },
+  props: {
+        cardName: String,
+        cardImage: String,
+        cardArchetype: String
+  }
   
 }
 </script>
@@ -16,17 +20,17 @@ export default {
 <template>
   <div>
       <div>
-        <img :src="card.card_image" :alt="card.name" class="w-100 ">
+        <img :src="cardImage" :alt="cardName" class="w-100 ">
       </div>
 
       <h3>
-        {{ card.name }}
+        {{ cardName }}
       </h3>
 
       
-     <!--  <h5>
-        {{ card.species }}
-      </h5> -->
+      <h5>
+        {{ cardArchetype }}
+      </h5>
     </div>
 </template>
 

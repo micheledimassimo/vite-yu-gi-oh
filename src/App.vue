@@ -1,23 +1,24 @@
 <script>
 
 import AppHeader from './components/AppHeader.vue';
-import appMain from './components/AppMain.vue';
+import AppMain from './components/AppMain.vue';
 
 import axios from 'axios';
 import { store } from './store.js';
 
+
 export default {
   data() {
     return { 
-      store: store,
-      allCards: []
+      store
+      
     }
   },
   
 
   components: {
     AppHeader,
-    appMain,
+    AppMain
   },
   created() {
     axios
@@ -25,9 +26,9 @@ export default {
       .then((res) => {
         console.log('OGGETTO CREATO DA AXIOS:', res);
         console.log('DATI CHE CI HA RISPOSTO IL SERVER:', res.data);
-        console.log('TUTTI I PERSONAGGI:', res.data.results);
+        console.log('TUTTI I PERSONAGGI:', res.data.data);
 
-        this.store.allCards = res.data.results;
+        this.store.allCards = res.data.data;
       });
     }
   

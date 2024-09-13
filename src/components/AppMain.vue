@@ -16,15 +16,15 @@ export default {
 </script>
 
 <template>
-  <main>
+  
     <div class="container py-5">
-      <div class="row">
-        <div v-for="(card, i) in store.allCards" :key="i" class="my-col-1-5 mb-4">
-          <SingleCard :card="card" />
+      <div class="">
+        <div class="row" >
+          <SingleCard class="my-col-1-5 mb-4" v-for="(card, index) in store.allCards" :key="index" :cardName="card.name" :cardImage="card.card_images[0].image_url" :cardArchetype="card.archetype" />
         </div>
       </div>
     </div>
-  </main>
+  
 </template>
 
 <style lang="scss" scoped>
